@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://byc1chnbe0qt7"]
+
+[ext_resource type="Script" path="res://bow.gd" id="1_8hmbx"]
+[ext_resource type="Texture2D" uid="uid://c0punjgr47wsr" path="res://bow.png" id="1_vxcgp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gkrg5"]
+
+[node name="Node2D" type="CharacterBody2D"]
+script = ExtResource("1_8hmbx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_gkrg5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_vxcgp")
