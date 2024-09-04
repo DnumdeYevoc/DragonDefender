@@ -1,8 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://doaxs8klsm1ra"]
+[gd_scene load_steps=3 format=3 uid="uid://doaxs8klsm1ra"]
 
 [ext_resource type="PackedScene" uid="uid://byc1chnbe0qt7" path="res://bow.tscn" id="1_7xykp"]
+[ext_resource type="Texture2D" uid="uid://b3a6c7poyr05m" path="res://Background.png" id="2_k3co8"]
 
 [node name="Game" type="Node2D"]
 
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 322.0
+offset_bottom = 184.0
+texture = ExtResource("2_k3co8")
+
 [node name="Node2D" parent="." instance=ExtResource("1_7xykp")]
+position = Vector2(16, 102)
+
+[node name="projectile_container" type="Node2D" parent="."]
 position = Vector2(16, 102)

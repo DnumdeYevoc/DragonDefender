@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bddnov4ihdtkk"]
+
+[ext_resource type="Script" path="res://Arrow.gd" id="1_0cq5o"]
+[ext_resource type="Texture2D" uid="uid://dnm5634lw3ejn" path="res://arrow.png" id="1_umh3d"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_k7n6i"]
+a = Vector2(-17, 1)
+b = Vector2(25, 0)
+
+[node name="Arrow" type="CharacterBody2D"]
+script = ExtResource("1_0cq5o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_umh3d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_k7n6i")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 106.026
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
