@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var frames = $Sprite2D
 
 var texture : Texture2D
-var spawn : Vector2
+
 var speed : int
 
 func ready():

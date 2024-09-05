@@ -7,12 +7,11 @@
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
-offset_right = 322.0
-offset_bottom = 184.0
+offset_right = 650.0
+offset_bottom = 361.0
 texture = ExtResource("2_k3co8")
 
 [node name="Node2D" parent="." instance=ExtResource("1_7xykp")]
-position = Vector2(16, 102)
+position = Vector2(31, 278)
 
 [node name="projectile_container" type="Node2D" parent="."]
-position = Vector2(16, 102)

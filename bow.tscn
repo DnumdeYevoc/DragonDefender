@@ -1,10 +1,46 @@
-[gd_scene load_steps=5 format=3 uid="uid://byc1chnbe0qt7"]
+[gd_scene load_steps=13 format=3 uid="uid://byc1chnbe0qt7"]
 
 [ext_resource type="Script" path="res://bow.gd" id="1_8hmbx"]
-[ext_resource type="Texture2D" uid="uid://c0punjgr47wsr" path="res://bow.png" id="1_vxcgp"]
+[ext_resource type="Texture2D" uid="uid://c78vhpn8tpc6n" path="res://bow-frames/bow-frame-0.png" id="2_adtp2"]
 [ext_resource type="Script" path="res://ProjectileEmitter.gd" id="3_60xcj"]
+[ext_resource type="Texture2D" uid="uid://dnm5634lw3ejn" path="res://arrow.png" id="3_e35aj"]
+[ext_resource type="Texture2D" uid="uid://oiwddmaatiwy" path="res://bow-frames/bow-frame-1.png" id="3_rbwt3"]
+[ext_resource type="Texture2D" uid="uid://cl86spme4dfyr" path="res://bow-frames/bow-frame-2.png" id="4_r44mf"]
+[ext_resource type="Texture2D" uid="uid://ddl57fyopndmp" path="res://bow-frames/bow-frame-3.png" id="5_3gw6o"]
+[ext_resource type="Texture2D" uid="uid://di4obn25dgtjk" path="res://bow-frames/bow-frame-4.png" id="6_d82r2"]
+[ext_resource type="Texture2D" uid="uid://bdeilny86ofdt" path="res://bow-frames/bow-frame-5.png" id="7_44hjf"]
+[ext_resource type="Texture2D" uid="uid://cqndnc0t4hk8y" path="res://bow-frames/bow-frame-6.png" id="8_rmx7u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gkrg5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hkbue"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("2_adtp2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rbwt3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_r44mf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3gw6o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_d82r2")
+}, {
+"duration": 2.0,
+"texture": ExtResource("7_44hjf")
+}, {
+"duration": 0.5,
+"texture": ExtResource("8_rmx7u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Node2D" type="CharacterBody2D"]
 script = ExtResource("1_8hmbx")
@@ -12,9 +48,15 @@ script = ExtResource("1_8hmbx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_gkrg5")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("1_vxcgp")
+sprite_frames = SubResource("SpriteFrames_hkbue")
+frame_progress = 0.778643
+
+[node name="StaticArrow" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+texture = ExtResource("3_e35aj")
 
 [node name="ProjectileEmmiter" type="Node2D" parent="."]
 script = ExtResource("3_60xcj")
