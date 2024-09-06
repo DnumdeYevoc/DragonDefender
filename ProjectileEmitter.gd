@@ -5,8 +5,9 @@ var projectile = preload('res://Arrow.tscn')
 
 func _ready():
 	projectile_container = get_tree().get_root().get_node('Game').get_node('projectile_container')
-func shoot(collision_layer,multishot,spread,speed,spawn_pos,damage, texture):
+func shoot(collision_layer,multishot,angle,speed,spawn_pos,damage, texture):
 	var instance = projectile.instantiate()
+	instance.rotation_degrees = angle
 	instance.collision_layer = collision_layer
 	instance.global_position = spawn_pos
 	instance.texture = texture

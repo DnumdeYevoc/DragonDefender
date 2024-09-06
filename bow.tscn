@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://byc1chnbe0qt7"]
+[gd_scene load_steps=14 format=3 uid="uid://byc1chnbe0qt7"]
 
 [ext_resource type="Script" path="res://bow.gd" id="1_8hmbx"]
 [ext_resource type="Texture2D" uid="uid://c78vhpn8tpc6n" path="res://bow-frames/bow-frame-0.png" id="2_adtp2"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://di4obn25dgtjk" path="res://bow-frames/bow-frame-4.png" id="6_d82r2"]
 [ext_resource type="Texture2D" uid="uid://bdeilny86ofdt" path="res://bow-frames/bow-frame-5.png" id="7_44hjf"]
 [ext_resource type="Texture2D" uid="uid://cqndnc0t4hk8y" path="res://bow-frames/bow-frame-6.png" id="8_rmx7u"]
+[ext_resource type="Texture2D" uid="uid://3wehaou7cukt" path="res://bow-frames/bow-frame-7.png" id="9_ca30j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gkrg5"]
 
@@ -36,6 +37,9 @@ animations = [{
 }, {
 "duration": 0.5,
 "texture": ExtResource("8_rmx7u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ca30j")
 }],
 "loop": true,
 "name": &"default",
@@ -51,7 +55,7 @@ shape = SubResource("RectangleShape2D_gkrg5")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_hkbue")
-frame_progress = 0.778643
+frame_progress = 0.375272
 
 [node name="StaticArrow" type="Sprite2D" parent="."]
 visible = false
