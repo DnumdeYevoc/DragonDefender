@@ -11,9 +11,9 @@ func ready():
 	frames.texture = texture
 func _physics_process(delta):
 	velocity = Vector2(speed * delta,0).rotated(rotation)
-	
-	if rotation_degrees < 90:
-		rotation_degrees += 30*delta
+	speed *= 0.99
+	#if rotation_degrees < 90:
+		#rotation_degrees += 30*delta
 	move_and_slide()
 
 

@@ -10,7 +10,7 @@ var wobble = 0
 var toggle = true
 var count = 0
 @onready var arrow_texture = preload("res://arrow.png")
-
+var offset = [19,14,11,6,0,-8,16,19]
 
 func _ready():
 	pass
@@ -44,6 +44,7 @@ func _physics_process(delta: float):
 			toggle = false
 		if angle <= -5:
 			toggle = true
+		
 
 	
 	elif not frame == 0:
@@ -59,6 +60,7 @@ func _physics_process(delta: float):
 	if frame > 7:
 		frame = 0
 	bow.frame = frame
+	static_arrow.offset.x = offset[frame]
 	bow.rotation_degrees = angle
 	static_arrow.rotation_degrees = angle
 	

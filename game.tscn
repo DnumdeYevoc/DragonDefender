@@ -1,17 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://doaxs8klsm1ra"]
+[gd_scene load_steps=4 format=3 uid="uid://doaxs8klsm1ra"]
 
 [ext_resource type="PackedScene" uid="uid://byc1chnbe0qt7" path="res://bow.tscn" id="1_7xykp"]
-[ext_resource type="Texture2D" uid="uid://b3a6c7poyr05m" path="res://Background.png" id="2_k3co8"]
+[ext_resource type="Texture2D" uid="uid://cfw8g7u0p6umk" path="res://forest.png" id="1_kbtp0"]
+[ext_resource type="Texture2D" uid="uid://c3u7dg2550jff" path="res://castle.png" id="3_s16sb"]
 
 [node name="Game" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
-offset_right = 650.0
-offset_bottom = 361.0
-texture = ExtResource("2_k3co8")
+offset_left = -187.0
+offset_top = -1.0
+offset_right = 640.0
+offset_bottom = 360.0
+texture = ExtResource("1_kbtp0")
+
+[node name="Castle" type="TextureRect" parent="."]
+texture_filter = 1
+offset_left = -12.0
+offset_right = 117.0
+offset_bottom = 366.0
+texture = ExtResource("3_s16sb")
 
 [node name="Node2D" parent="." instance=ExtResource("1_7xykp")]
-position = Vector2(31, 278)
+position = Vector2(62, 189)
 
 [node name="projectile_container" type="Node2D" parent="."]
