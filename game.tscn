@@ -8,9 +8,9 @@
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
-offset_left = -187.0
+offset_left = -25.0
 offset_top = -1.0
-offset_right = 640.0
+offset_right = 802.0
 offset_bottom = 360.0
 texture = ExtResource("1_kbtp0")
 

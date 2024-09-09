@@ -53,7 +53,9 @@ func _physics_process(delta: float):
 		
 	if Input.is_action_just_released('ui_accept'):
 		static_arrow.visible = false
-		projectile_emmiter.shoot(4,1,angle,300*frame**3,global_position,5,arrow_texture)
+		
+		if 300*frame**3 > 3000:
+			projectile_emmiter.shoot(4,1,angle,300*frame**3,global_position,5,arrow_texture)
 		angle = 0
 		wobble = 0
 	
