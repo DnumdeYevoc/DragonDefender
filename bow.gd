@@ -10,7 +10,7 @@ var wobble = 0
 var toggle = true
 var count = 0
 @onready var arrow_texture = preload("res://arrow.png")
-var offset = [19,14,11,6,0,-8,16,19]
+var offset = [-24 ,-18,-12,-6,0,6,-12,-18]
 
 func _ready():
 	pass
