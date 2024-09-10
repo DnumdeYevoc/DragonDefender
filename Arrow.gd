@@ -15,12 +15,12 @@ func _physics_process(delta):
 	velocity = Vector2(speed * delta,0).rotated(rotation)
 	
 	if counter == 10:
-		if scale > Vector2(0.5,0.5):
-			scale *= 0.9/(delta/0.015)
-			speed *= 0.9/(delta/0.015)
-			print(delta)
+		if scale >Vector2(1,1):
+			#scale *= 0.9
+			pass
+			
 		else:
-			scale = Vector2(0.5,0.5)
+			scale = Vector2(1,1)
 			speed = 0
 		
 		counter =0

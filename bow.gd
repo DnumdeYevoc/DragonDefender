@@ -16,14 +16,14 @@ func _ready():
 	pass
 func _physics_process(delta: float):
 	#reset var
-	velocity.y = 0
+	velocity.x = 0
 	
 	#inputs
 	#movement of bow
-	if Input.is_action_pressed('ui_up'):
-		velocity.y = -speed*delta*60
-	if Input.is_action_pressed('ui_down'):
-		velocity.y = speed*delta*60
+	if Input.is_action_pressed('ui_left'):
+		velocity.x = -speed*delta*60
+	if Input.is_action_pressed('ui_right'):
+		velocity.x = speed*delta*60
 	#shooting
 	
 	if Input.is_action_pressed('ui_accept'):
@@ -54,7 +54,8 @@ func _physics_process(delta: float):
 	if Input.is_action_just_released('ui_accept'):
 		static_arrow.visible = false
 		
-		if 300*frame**3 > 3000:
+		if frame >3  and frame<7:
+			angle += 270
 			projectile_emmiter.shoot(4,1,angle,300*frame**3,global_position,5,arrow_texture)
 		angle = 0
 		wobble = 0
@@ -62,7 +63,7 @@ func _physics_process(delta: float):
 	if frame > 7:
 		frame = 0
 	bow.frame = frame
-	static_arrow.offset.x = offset[frame]
+	static_arrow.offset.y = offset[frame]
 	bow.rotation_degrees = angle
 	static_arrow.rotation_degrees = angle
 	
