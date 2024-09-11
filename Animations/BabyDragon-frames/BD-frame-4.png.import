@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://oiwddmaatiwy"
-path="res://.godot/imported/bow-frame-1.png-6c37ba267062363308da03fd2f5fa95b.ctex"
+uid="uid://yshkubq4huf2"
+path="res://.godot/imported/BD-frame-4.png-3c985a66fdf54340bc033e5b61dc68f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bow-frames/bow-frame-1.png"
-dest_files=["res://.godot/imported/bow-frame-1.png-6c37ba267062363308da03fd2f5fa95b.ctex"]
+source_file="res://Animations/BabyDragon-frames/BD-frame-4.png"
+dest_files=["res://.godot/imported/BD-frame-4.png-3c985a66fdf54340bc033e5b61dc68f5.ctex"]
 
 [params]
 

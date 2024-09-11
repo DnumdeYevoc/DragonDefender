@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://driwjdyn0v4rt"
-path="res://.godot/imported/bow-frame-8.png-1c597a2cc3182141d0dec023455f21b1.ctex"
+path="res://.godot/imported/bow-frame-8.png-48d31630c0b814374a352ba120eef901.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bow-frames/bow-frame-8.png"
-dest_files=["res://.godot/imported/bow-frame-8.png-1c597a2cc3182141d0dec023455f21b1.ctex"]
+source_file="res://Animations/bow-frames/bow-frame-8.png"
+dest_files=["res://.godot/imported/bow-frame-8.png-48d31630c0b814374a352ba120eef901.ctex"]
 
 [params]
 

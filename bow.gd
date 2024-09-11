@@ -40,9 +40,9 @@ func _physics_process(delta: float):
 			angle +=  wobble
 		else:
 			angle -= wobble
-		if angle >= 5:
+		if angle >= wobble*4:
 			toggle = false
-		if angle <= -5:
+		if angle <= -wobble*4:
 			toggle = true
 		
 

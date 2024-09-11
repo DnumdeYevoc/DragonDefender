@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddl57fyopndmp"
-path="res://.godot/imported/bow-frame-3.png-54a7cfea337c5bec9b6068768145f52b.ctex"
+uid="uid://qwmn7xcwe6l7"
+path="res://.godot/imported/castle.png-806896d38d5f2330ff76f2b64cd2059a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bow-frames/bow-frame-3.png"
-dest_files=["res://.godot/imported/bow-frame-3.png-54a7cfea337c5bec9b6068768145f52b.ctex"]
+source_file="res://Textures/castle.png"
+dest_files=["res://.godot/imported/castle.png-806896d38d5f2330ff76f2b64cd2059a.ctex"]
 
 [params]
 

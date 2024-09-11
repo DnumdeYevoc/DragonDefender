@@ -9,21 +9,23 @@ var speed : int
 
 func ready():
 	frames.texture = texture
-	
+	counter = 0
 func _physics_process(delta):
 	counter += 1
 	velocity = Vector2(speed * delta,0).rotated(rotation)
 	
-	if counter == 10:
-		if scale >Vector2(1,1):
-			#scale *= 0.9
-			pass
+	
+	if scale >Vector2(0.7,0.7):
 			
-		else:
-			scale = Vector2(1,1)
-			speed = 0
+			scale *= 1 -(0.0005*counter)   
+			speed *= 0.97
+			
+			
+	else:
+		scale = Vector2(0.7,0.7)
+		speed = 0
 		
-		counter =0
+	
 
 	if speed < 400:
 		speed = 0

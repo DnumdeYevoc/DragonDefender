@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3wehaou7cukt"
-path="res://.godot/imported/bow-frame-7.png-d0111bfbb828b53bfb385c238ccd4b67.ctex"
+uid="uid://bdeilny86ofdt"
+path="res://.godot/imported/bow-frame-5.png-5116ab675c9461f51d24d2359b88daba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bow-frames/bow-frame-7.png"
-dest_files=["res://.godot/imported/bow-frame-7.png-d0111bfbb828b53bfb385c238ccd4b67.ctex"]
+source_file="res://Animations/bow-frames/bow-frame-5.png"
+dest_files=["res://.godot/imported/bow-frame-5.png-5116ab675c9461f51d24d2359b88daba.ctex"]
 
 [params]
 
