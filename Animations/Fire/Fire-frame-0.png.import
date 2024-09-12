@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c76tn8gemyuom"
-path="res://.godot/imported/Forest.png-6be97cb3f227c2baa0071ad233675dba.ctex"
+uid="uid://b8tedtm0tuvnx"
+path="res://.godot/imported/Fire-frame-0.png-b8d1ff4b715ad972c7d334375f5004d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Forest.png"
-dest_files=["res://.godot/imported/Forest.png-6be97cb3f227c2baa0071ad233675dba.ctex"]
+source_file="res://Animations/Fire/Fire-frame-0.png"
+dest_files=["res://.godot/imported/Fire-frame-0.png-b8d1ff4b715ad972c7d334375f5004d2.ctex"]
 
 [params]
 

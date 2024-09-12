@@ -2,7 +2,8 @@ extends CharacterBody2D
 
 @export var damage : int
 var speed :int
-@onready var animation = $AnimatedSprite2D
+@onready var animation = $Fireball
+@onready var fire = $Fire
 
 func _physics_process(delta):
 	animation.play()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c25mtso06gpa6"]
+[gd_scene load_steps=13 format=3 uid="uid://c25mtso06gpa6"]
 
 [ext_resource type="Script" path="res://Enemy.gd" id="1_ey83q"]
 [ext_resource type="Texture2D" uid="uid://h685qx4j5jyg" path="res://Animations/BD-frames/pixil-frame-0.png" id="2_x2fkd"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ierioqwnp4su" path="res://Animations/BD-frames/pixil-frame-5.png" id="7_g44ws"]
 [ext_resource type="Texture2D" uid="uid://q26eytrqj21u" path="res://Animations/BD-frames/pixil-frame-6.png" id="8_bbqjj"]
 [ext_resource type="Script" path="res://ProjectileEmitter.gd" id="9_1iby5"]
+[ext_resource type="PackedScene" uid="uid://cng0a1qnrknvj" path="res://healthbar.tscn" id="10_2bllr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_to40o"]
 radius = 16.0
@@ -60,5 +61,11 @@ frame_progress = 0.805402
 
 [node name="EnemyProjectileEmmiter" type="Node2D" parent="."]
 script = ExtResource("9_1iby5")
+
+[node name="healthbar" parent="." instance=ExtResource("10_2bllr")]
+offset_left = -12.0
+offset_top = 30.0
+offset_right = 13.0
+offset_bottom = 34.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

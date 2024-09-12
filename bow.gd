@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var projectile_emmiter = $ProjectileEmmiter
 @onready var static_arrow = $StaticArrow
 @onready var bow = $Sprite2D
+@onready var healthbar = $healthbar
 var speed = 200
 var frame = 0
 var angle = 0
@@ -12,9 +13,12 @@ var count = 0
 @onready var arrow_texture = preload("res://arrow.png")
 var arrow = preload('res://Arrow.tscn')
 var offset = [-24 ,-18,-12,-6,0,6,-12,-18]
-
+var health = 100
+var max_health = 100
+var touching : int
+var burn_timer = 0
 func _ready():
-	pass
+	healthbar.update(0,health, max_health)
 func _physics_process(delta: float):
 	#reset var
 	velocity.x = 0
@@ -70,3 +74,31 @@ func _physics_process(delta: float):
 	static_arrow.rotation_degrees = angle
 	
 	move_and_slide()
+	
+	if touching>0:
+		burn_timer +=1
+		if burn_timer >= 60:
+			health -= touching
+			touching -=1
+			healthbar.update(0,health, max_health)
+			burn_timer = 0
+		
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.collision_layer == 2:
+		health -= body.damage
+		healthbar.update(0,health, max_health) 
+		
+		body.animation = body.fire
+		touching = 5
+		body.speed = 0
+		if touching < 0:
+			body.queue_free
+			touching = 0
+		
+		if health<=0:
+			#die
+			pass
+
+	
+
+	

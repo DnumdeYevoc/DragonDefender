@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bjfakmft2ousy"
-path="res://.godot/imported/Fire-frame-1.png-5c21a9f616eaa9612fce25bd2181db4e.ctex"
+path="res://.godot/imported/Fire-frame-1.png-570254743d06b054486899595296c6a5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Animations/Fireball/Fire-frame-1.png"
-dest_files=["res://.godot/imported/Fire-frame-1.png-5c21a9f616eaa9612fce25bd2181db4e.ctex"]
+source_file="res://Animations/Fire/Fire-frame-1.png"
+dest_files=["res://.godot/imported/Fire-frame-1.png-570254743d06b054486899595296c6a5.ctex"]
 
 [params]
 

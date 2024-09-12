@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8tedtm0tuvnx"
-path="res://.godot/imported/Fire-frame-0.png-14f9d0e0d42288b18e885bfd452d9a39.ctex"
+uid="uid://cohbotyy1s74t"
+path="res://.godot/imported/Healthbarempty.png-8f1c22f73a7bc416515746d891eef6e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Animations/Fireball/Fire-frame-0.png"
-dest_files=["res://.godot/imported/Fire-frame-0.png-14f9d0e0d42288b18e885bfd452d9a39.ctex"]
+source_file="res://Textures/Healthbarempty.png"
+dest_files=["res://.godot/imported/Healthbarempty.png-8f1c22f73a7bc416515746d891eef6e6.ctex"]
 
 [params]
 
