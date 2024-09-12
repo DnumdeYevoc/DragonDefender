@@ -1,46 +1,65 @@
-[gd_scene load_steps=6 format=3 uid="uid://doaxs8klsm1ra"]
+[gd_scene load_steps=8 format=3 uid="uid://doaxs8klsm1ra"]
 
 [ext_resource type="PackedScene" uid="uid://byc1chnbe0qt7" path="res://bow.tscn" id="1_7xykp"]
 [ext_resource type="Texture2D" uid="uid://cf6bx0nlodint" path="res://Bg.png" id="1_m1xqi"]
-[ext_resource type="Texture2D" uid="uid://c3u7dg2550jff" path="res://castle.png" id="3_s16sb"]
-[ext_resource type="Texture2D" uid="uid://c76tn8gemyuom" path="res://Textures/Forest.png" id="4_4j4ta"]
+[ext_resource type="Texture2D" uid="uid://ccxqc8v04sopd" path="res://Textures/Sky.png" id="2_8fq41"]
+[ext_resource type="Texture2D" uid="uid://c2ian1woxlqxx" path="res://Textures/castle.png" id="3_lx3vy"]
+[ext_resource type="Texture2D" uid="uid://c76tn8gemyuom" path="res://Textures/forest.png" id="4_4j4ta"]
 [ext_resource type="PackedScene" uid="uid://c25mtso06gpa6" path="res://BabyDragon.tscn" id="5_s1lm7"]
+[ext_resource type="Texture2D" uid="uid://bmfaddgmkhxqt" path="res://Textures/Board.png" id="6_4p86g"]
 
 [node name="Game" type="Node2D"]
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="SKy" type="TextureRect" parent="."]
 texture_filter = 1
-offset_left = -10.0
-offset_top = 3.0
-offset_right = 236.0
-offset_bottom = 328.0
+offset_top = 2.0
+offset_right = 638.0
+offset_bottom = 695.0
+texture = ExtResource("2_8fq41")
+
+[node name="Grass" type="TextureRect" parent="."]
+texture_filter = 1
+offset_left = -40.0
+offset_top = 113.0
+offset_right = 294.0
+offset_bottom = 381.0
 scale = Vector2(2, 2)
 texture = ExtResource("1_m1xqi")
 
 [node name="Castle" type="TextureRect" parent="."]
 texture_filter = 1
-offset_left = -9.0
-offset_top = 557.0
-offset_right = 238.0
-offset_bottom = 641.0
+offset_left = -8.0
+offset_top = 478.0
+offset_right = 352.0
+offset_bottom = 878.0
 scale = Vector2(2, 2)
-texture = ExtResource("3_s16sb")
+texture = ExtResource("3_lx3vy")
 
 [node name="Node2D" parent="." instance=ExtResource("1_7xykp")]
-position = Vector2(239, 626)
+position = Vector2(236, 639)
 scale = Vector2(2, 2)
+
+[node name="projectile_container" type="Node2D" parent="."]
 
 [node name="forest" type="TextureRect" parent="."]
 texture_filter = 1
-offset_left = -61.0
-offset_top = -57.0
-offset_right = 897.0
-offset_bottom = 93.0
+offset_left = -86.0
+offset_top = 98.0
+offset_right = 872.0
+offset_bottom = 173.0
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("4_4j4ta")
 stretch_mode = 1
 
 [node name="Node2D2" parent="." instance=ExtResource("5_s1lm7")]
-position = Vector2(228, 117)
+position = Vector2(341, 208)
 
-[node name="projectile_container" type="Node2D" parent="."]
+[node name="Node2D3" parent="." instance=ExtResource("5_s1lm7")]
+position = Vector2(109, 178)
+
+[node name="board" type="TextureRect" parent="."]
+texture_filter = 1
+offset_left = 70.0
+offset_right = 550.0
+offset_bottom = 150.0
+texture = ExtResource("6_4p86g")

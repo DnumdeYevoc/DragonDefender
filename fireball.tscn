@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://b5fl743a3lung"]
+
+[ext_resource type="Texture2D" uid="uid://b8tedtm0tuvnx" path="res://Animations/Fireball/Fire-frame-0.png" id="1_dbc6m"]
+[ext_resource type="Script" path="res://fireball.gd" id="1_p0pvm"]
+[ext_resource type="Texture2D" uid="uid://bjfakmft2ousy" path="res://Animations/Fireball/Fire-frame-1.png" id="2_xhr8l"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3s8ji"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dbc6m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xhr8l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uk6m7"]
+radius = 5.0
+height = 16.0
+
+[node name="Fireball" type="CharacterBody2D"]
+script = ExtResource("1_p0pvm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -3)
+sprite_frames = SubResource("SpriteFrames_3s8ji")
+frame_progress = 0.215709
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_uk6m7")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 6.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

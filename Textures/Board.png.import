@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b230iwplaiw17"
-path="res://.godot/imported/BD-frame-1.png-940a39be30c1e4e24f028a9f3c430f96.ctex"
+uid="uid://bmfaddgmkhxqt"
+path="res://.godot/imported/Board.png-faa5ca4bef2da175771be7e73eb7e6b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Animations/BabyDragon-frames/BD-frame-1.png"
-dest_files=["res://.godot/imported/BD-frame-1.png-940a39be30c1e4e24f028a9f3c430f96.ctex"]
+source_file="res://Textures/Board.png"
+dest_files=["res://.godot/imported/Board.png-faa5ca4bef2da175771be7e73eb7e6b1.ctex"]
 
 [params]
 

@@ -10,6 +10,7 @@ var wobble = 0
 var toggle = true
 var count = 0
 @onready var arrow_texture = preload("res://arrow.png")
+var arrow = preload('res://Arrow.tscn')
 var offset = [-24 ,-18,-12,-6,0,6,-12,-18]
 
 func _ready():
@@ -20,9 +21,10 @@ func _physics_process(delta: float):
 	
 	#inputs
 	#movement of bow
-	if Input.is_action_pressed('ui_left'):
+	
+	if Input.is_action_pressed('ui_left') and position.x > 0:
 		velocity.x = -speed*delta*60
-	if Input.is_action_pressed('ui_right'):
+	if Input.is_action_pressed('ui_right') and position.x< 600:
 		velocity.x = speed*delta*60
 	#shooting
 	
@@ -56,7 +58,7 @@ func _physics_process(delta: float):
 		
 		if frame >3  and frame<7:
 			angle += 270
-			projectile_emmiter.shoot(4,1,angle,300*frame**3,global_position,5,arrow_texture)
+			projectile_emmiter.shoot(4,1,angle,300*frame**3,global_position,5,arrow)
 		angle = 0
 		wobble = 0
 	

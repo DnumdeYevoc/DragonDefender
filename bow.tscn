@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://3wehaou7cukt" path="res://Animations/bow-frames/bow-frame-7.png" id="9_ca30j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gkrg5"]
+size = Vector2(68, 13)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hkbue"]
 animations = [{
@@ -46,10 +47,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Node2D" type="CharacterBody2D"]
+[node name="bow" type="CharacterBody2D"]
 script = ExtResource("1_8hmbx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6.5)
 shape = SubResource("RectangleShape2D_gkrg5")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
@@ -58,6 +60,7 @@ sprite_frames = SubResource("SpriteFrames_hkbue")
 frame_progress = 0.375272
 
 [node name="StaticArrow" type="Sprite2D" parent="."]
+visible = false
 texture_filter = 1
 texture = ExtResource("3_e35aj")
 

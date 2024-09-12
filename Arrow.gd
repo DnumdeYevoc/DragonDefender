@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var frames = $Sprite2D
 var counter = 0
 var texture : Texture2D
+
 var speed : int
 
 
@@ -18,7 +19,7 @@ func _physics_process(delta):
 		scale *= 1 -(0.001*counter)   
 		speed *= 0.97
 	
-	if scale <= Vector2(0.01,0.01):
+	if scale <= Vector2(0.002*position.y,0.002*position.y):
 		speed = 0
 	if speed < 400:
 		speed = 0

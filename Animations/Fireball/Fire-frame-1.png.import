@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d38ih7tjcpfi8"
-path="res://.godot/imported/BD-frame-5.png-4b751b1467a0b449a2171db8b6065412.ctex"
+uid="uid://bjfakmft2ousy"
+path="res://.godot/imported/Fire-frame-1.png-5c21a9f616eaa9612fce25bd2181db4e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Animations/BabyDragon-frames/BD-frame-5.png"
-dest_files=["res://.godot/imported/BD-frame-5.png-4b751b1467a0b449a2171db8b6065412.ctex"]
+source_file="res://Animations/Fireball/Fire-frame-1.png"
+dest_files=["res://.godot/imported/Fire-frame-1.png-5c21a9f616eaa9612fce25bd2181db4e.ctex"]
 
 [params]
 
