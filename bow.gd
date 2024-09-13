@@ -10,13 +10,15 @@ var angle = 0
 var wobble = 0
 var toggle = true
 var count = 0
+var fireball = preload("res://fireball.tscn")
 @onready var arrow_texture = preload("res://arrow.png")
 var arrow = preload('res://Arrow.tscn')
 var offset = [-24 ,-18,-12,-6,0,6,-12,-18]
 var health = 100
 var max_health = 100
-var touching : int
+var fire_life = 0
 var burn_timer = 0
+var fire_damage = 2
 func _ready():
 	healthbar.update(0,health, max_health)
 func _physics_process(delta: float):
@@ -70,16 +72,18 @@ func _physics_process(delta: float):
 		frame = 0
 	bow.frame = frame
 	static_arrow.offset.y = offset[frame]
+
 	bow.rotation_degrees = angle
 	static_arrow.rotation_degrees = angle
 	
 	move_and_slide()
 	
-	if touching>0:
+	#burning
+	if fire_life>0:
 		burn_timer +=1
 		if burn_timer >= 60:
-			health -= touching
-			touching -=1
+			health -= fire_damage
+			fire_life -=1
 			healthbar.update(0,health, max_health)
 			burn_timer = 0
 		
@@ -87,18 +91,20 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.collision_layer == 2:
 		health -= body.damage
 		healthbar.update(0,health, max_health) 
-		
-		body.animation = body.fire
-		touching = 5
 		body.speed = 0
-		if touching < 0:
-			body.queue_free
-			touching = 0
+		if body.is_fire:
+			
+			fire_damage = 5
+			body.fireball.visible = false
+			body.fire.visible = true
+			body.animation = body.fire
+			fire_life = 5
+			if fire_life < 0:
+				body.queue_free
+				body.fireball.visible = true
+				body.fire.visible = false
+				fire_life = 0
 		
 		if health<=0:
 			#die
 			pass
-
-	
-
-	

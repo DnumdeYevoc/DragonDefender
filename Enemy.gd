@@ -24,8 +24,11 @@ func _physics_process(delta : float):
 		position.y += delta*60*(position.y /200)
 	
 	if cooldown >= 200:
-		projectile_emmiter.shoot(2,multishot,0,proj_speed,global_position, 25, fireball)
+		projectile_emmiter.shoot(2,multishot,0,proj_speed,global_position, 15, fireball)
 		cooldown = 0
+		
+	#if game.spawner_cooldown>0:
+		#position.y +=1
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.collision_layer == 4 and body.scale < Vector2(1.75,1.75):

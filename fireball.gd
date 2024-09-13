@@ -2,9 +2,12 @@ extends CharacterBody2D
 
 @export var damage : int
 var speed :int
-@onready var animation = $Fireball
-@onready var fire = $Fire
-
+@onready var animation : AnimatedSprite2D
+@onready var fireball = $Fireball
+@onready var fire= $Fire
+@onready var is_fire = true
+func _ready():
+	animation = fireball
 func _physics_process(delta):
 	animation.play()
 	

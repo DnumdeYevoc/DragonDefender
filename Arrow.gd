@@ -16,7 +16,7 @@ func _physics_process(delta):
 	velocity = Vector2(speed * delta,0).rotated(rotation)
 	
 	if speed>0:
-		scale *= 1 -(0.001*counter)   
+		scale *= 1 -(0.0005*counter)   
 		speed *= 0.97
 	
 	if scale <= Vector2(0.002*position.y,0.002*position.y):

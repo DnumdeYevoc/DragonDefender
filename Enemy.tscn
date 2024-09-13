@@ -1,0 +1,71 @@
+[gd_scene load_steps=13 format=3 uid="uid://du26yos36rqp7"]
+
+[ext_resource type="Script" path="res://Enemy.gd" id="1_43mxd"]
+[ext_resource type="Texture2D" uid="uid://h685qx4j5jyg" path="res://Animations/BD-frames/pixil-frame-0.png" id="2_jyal6"]
+[ext_resource type="Texture2D" uid="uid://d4jyth1rwx67r" path="res://Animations/BD-frames/pixil-frame-1.png" id="3_l44xa"]
+[ext_resource type="Texture2D" uid="uid://c633mp6m320m8" path="res://Animations/BD-frames/pixil-frame-2.png" id="4_iwktg"]
+[ext_resource type="Texture2D" uid="uid://6guaw1qvnyjr" path="res://Animations/BD-frames/pixil-frame-3.png" id="5_3xpu8"]
+[ext_resource type="Texture2D" uid="uid://d18gt26xdba3l" path="res://Animations/BD-frames/pixil-frame-4.png" id="6_kms0l"]
+[ext_resource type="Texture2D" uid="uid://ierioqwnp4su" path="res://Animations/BD-frames/pixil-frame-5.png" id="7_a17e3"]
+[ext_resource type="Texture2D" uid="uid://q26eytrqj21u" path="res://Animations/BD-frames/pixil-frame-6.png" id="8_v22qe"]
+[ext_resource type="Script" path="res://ProjectileEmitter.gd" id="9_dt3u6"]
+[ext_resource type="PackedScene" uid="uid://cng0a1qnrknvj" path="res://healthbar.tscn" id="10_p8kbo"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_to40o"]
+radius = 16.0
+height = 64.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vyr6y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jyal6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_l44xa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_iwktg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3xpu8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kms0l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_a17e3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_v22qe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Enemy" type="Area2D"]
+collision_layer = 0
+collision_mask = 255
+script = ExtResource("1_43mxd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_to40o")
+
+[node name="BD_animation" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -5)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_vyr6y")
+frame_progress = 0.805402
+
+[node name="EnemyProjectileEmmiter" type="Node2D" parent="."]
+script = ExtResource("9_dt3u6")
+
+[node name="healthbar" parent="." instance=ExtResource("10_p8kbo")]
+offset_left = -12.0
+offset_top = 30.0
+offset_right = 13.0
+offset_bottom = 34.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

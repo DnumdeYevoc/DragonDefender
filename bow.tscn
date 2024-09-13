@@ -69,10 +69,10 @@ texture = ExtResource("3_e35aj")
 script = ExtResource("3_60xcj")
 
 [node name="healthbar" parent="." instance=ExtResource("12_x8m7p")]
-offset_left = -34.0
-offset_top = -2.0
-offset_right = 34.0
-offset_bottom = 2.0
+offset_left = -28.0
+offset_top = -19.0
+offset_right = 27.0
+offset_bottom = -15.0
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(0, -6.5)
