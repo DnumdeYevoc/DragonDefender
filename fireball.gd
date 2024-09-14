@@ -3,15 +3,15 @@ extends CharacterBody2D
 @export var damage : int
 var speed :int
 @onready var animation : AnimatedSprite2D
-@onready var fireball = $Fireball
+@onready var Fireball = $Fireball
 @onready var fire= $Fire
 @onready var is_fire = true
 func _ready():
-	animation = fireball
+	animation = Fireball
 func _physics_process(delta):
 	animation.play()
 	
-	scale = Vector2((position.y + 100) /200,(position.y + 100)/200)
+	scale = Vector2((position.y + 50) /300,(position.y + 50)/300)
 	
 	velocity = Vector2(speed * delta*(position.y /200),0).rotated(rotation+ deg_to_rad(90))
 	move_and_slide()

@@ -29,9 +29,9 @@ func _physics_process(delta: float):
 	#movement of bow
 	
 	if Input.is_action_pressed('ui_left') and position.x > 0:
-		velocity.x = -speed*delta*60
+		velocity.x = -speed*delta*90
 	if Input.is_action_pressed('ui_right') and position.x< 600:
-		velocity.x = speed*delta*60
+		velocity.x = speed*delta*90
 	#shooting
 	
 	if Input.is_action_pressed('ui_accept'):
@@ -93,17 +93,17 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		healthbar.update(0,health, max_health) 
 		body.speed = 0
 		if body.is_fire:
-			
 			fire_damage = 5
-			body.fireball.visible = false
+			body.Fireball.visible = false
 			body.fire.visible = true
 			body.animation = body.fire
 			fire_life = 5
 			if fire_life < 0:
 				body.queue_free
-				body.fireball.visible = true
+				body.Fireball.visible = true
 				body.fire.visible = false
 				fire_life = 0
+			
 		
 		if health<=0:
 			#die

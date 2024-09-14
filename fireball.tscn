@@ -39,7 +39,6 @@ radius = 5.0
 height = 16.0
 
 [node name="Fireball" type="CharacterBody2D"]
-collision_mask = 0
 script = ExtResource("1_p0pvm")
 
 [node name="Fireball" type="AnimatedSprite2D" parent="."]
