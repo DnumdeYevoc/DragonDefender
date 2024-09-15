@@ -4,6 +4,10 @@ extends CharacterBody2D
 @onready var static_arrow = $StaticArrow
 @onready var bow = $Sprite2D
 @onready var healthbar = $healthbar
+@onready var enemy_container : Node2D
+@onready var castle : TextureRect
+var cooldown = 0
+var bg : Node2D
 var speed = 200
 var frame = 0
 var angle = 0
@@ -21,6 +25,9 @@ var burn_timer = 0
 var fire_damage = 2
 func _ready():
 	healthbar.update(0,health, max_health)
+	enemy_container = get_tree().get_root().get_node('Game').get_node('enemy_container')
+	castle = get_tree().get_root().get_node('Game').get_node('Castle')
+	bg = get_tree().get_root().get_node('Game').get_node('Background')
 func _physics_process(delta: float):
 	#reset var
 	velocity.x = 0
@@ -75,7 +82,21 @@ func _physics_process(delta: float):
 
 	bow.rotation_degrees = angle
 	static_arrow.rotation_degrees = angle
-	
+	#death sequence
+	if health<=0:
+		cooldown +=1
+		if cooldown >= 100:
+			if castle.position.y >= 250:
+				bg.position.y +=0.4
+				position.y -=1.5
+				castle.position.y -=1.5
+				enemy_container.scale_up(0.85)
+			else:
+				enemy_container.move_up(1)
+				
+		else:
+			enemy_container.move_up(1)
+
 	move_and_slide()
 	
 	#burning
@@ -105,6 +126,4 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 				fire_life = 0
 			
 		
-		if health<=0:
-			#die
-			pass
+		

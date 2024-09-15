@@ -13,6 +13,7 @@ var proj_speed = 10000
 var multishot = 1
 var cooldown = 0
 var max_health = 10
+var scale_up = 0
 func _ready():
 	enemy_container = get_tree().get_root().get_node('Game').get_node('enemy_container')
 	game = get_tree().get_root().get_node('Game')
@@ -22,7 +23,7 @@ func _physics_process(delta : float):
 	animation.play('default',100*delta)
 	cooldown += 1
 	
-	scale = Vector2(position.y /300,position.y /300)
+	scale = Vector2((position.y+scale_up) /300,(position.y + scale_up)/300)
 	
 	if Input.is_action_pressed('ui_up'):
 		position.y += -delta*60*(position.y /300)

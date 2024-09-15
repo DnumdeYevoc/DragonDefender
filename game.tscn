@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://doaxs8klsm1ra"]
+[gd_scene load_steps=13 format=3 uid="uid://doaxs8klsm1ra"]
 
 [ext_resource type="PackedScene" uid="uid://byc1chnbe0qt7" path="res://bow.tscn" id="1_7xykp"]
 [ext_resource type="Script" path="res://game.gd" id="1_lf145"]
@@ -7,12 +7,31 @@
 [ext_resource type="Texture2D" uid="uid://c2ian1woxlqxx" path="res://Textures/castle.png" id="3_lx3vy"]
 [ext_resource type="Texture2D" uid="uid://c76tn8gemyuom" path="res://Textures/forest.png" id="4_4j4ta"]
 [ext_resource type="Texture2D" uid="uid://bmfaddgmkhxqt" path="res://Textures/Board.png" id="6_4p86g"]
+[ext_resource type="Texture2D" uid="uid://b5v5efgpo8txd" path="res://Animations/Fire/Fire-frame-0.png" id="6_by44q"]
 [ext_resource type="Script" path="res://enemy_container.gd" id="6_jr4yr"]
+[ext_resource type="Texture2D" uid="uid://doitaxtnn7tnv" path="res://Animations/Fire/Fire-frame-1.png" id="7_tf7ko"]
+[ext_resource type="Script" path="res://score.gd" id="11_uj4as"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ryw5t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_by44q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_tf7ko")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_lf145")
 
-[node name="Grass" type="TextureRect" parent="."]
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Grass" type="TextureRect" parent="Background"]
 texture_filter = 1
 offset_left = -40.0
 offset_top = 56.0
@@ -21,13 +40,23 @@ offset_bottom = 390.0
 scale = Vector2(2, 2)
 texture = ExtResource("1_m1xqi")
 
-[node name="SKy" type="TextureRect" parent="."]
+[node name="SKy" type="TextureRect" parent="Background"]
 texture_filter = 1
 offset_left = -6.0
 offset_top = -227.0
 offset_right = 632.0
 offset_bottom = 133.0
 texture = ExtResource("2_8fq41")
+
+[node name="forest" type="TextureRect" parent="Background"]
+texture_filter = 1
+offset_left = -86.0
+offset_top = 98.0
+offset_right = 872.0
+offset_bottom = 173.0
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("4_4j4ta")
+stretch_mode = 1
 
 [node name="Castle" type="TextureRect" parent="."]
 texture_filter = 1
@@ -38,15 +67,12 @@ offset_bottom = 1000.0
 scale = Vector2(2, 2)
 texture = ExtResource("3_lx3vy")
 
-[node name="forest" type="TextureRect" parent="."]
+[node name="Fire" type="AnimatedSprite2D" parent="Castle"]
 texture_filter = 1
-offset_left = -86.0
-offset_top = 98.0
-offset_right = 872.0
-offset_bottom = 173.0
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("4_4j4ta")
-stretch_mode = 1
+position = Vector2(156.406, 279.625)
+scale = Vector2(30.6187, 10.8125)
+sprite_frames = SubResource("SpriteFrames_ryw5t")
+autoplay = "default"
 
 [node name="enemy_container" type="Node2D" parent="."]
 position = Vector2(-1, 2)
@@ -66,3 +92,16 @@ offset_left = 70.0
 offset_right = 550.0
 offset_bottom = 150.0
 texture = ExtResource("6_4p86g")
+
+[node name="Score" type="Label" parent="board"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 61.0
+offset_right = 93.0
+offset_bottom = 84.0
+script = ExtResource("11_uj4as")
+
+[node name="Score2" type="Label" parent="board"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

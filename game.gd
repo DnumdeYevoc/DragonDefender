@@ -12,6 +12,7 @@ var wave_index = 0
 var en_amount = 2
 var spawner_countdown_length = 100
 func _physics_process(delta: float) -> void:
+	enemy_container.move_up(0.1)
 	if Input.is_key_pressed(KEY_W):
 		spawner_countdown =  spawner_countdown_length
 		en_amount = wave_index + 2
@@ -21,17 +22,17 @@ func _physics_process(delta: float) -> void:
 	if spawner_countdown>= 0:
 		spawner_countdown -=1
 		cooldown-=1
-		enemy_container.move_up(0.65)
+		enemy_container.move_up(0.5)
 		
-		if cooldown <=0 and spawner_countdown >= spawner_countdown_length*0.75:
+		if cooldown <=0 and spawner_countdown >= spawner_countdown_length*0.25:
 			spawn_x = random.randi_range(1,14)
 			en_index +=1
-			enemy_container.spawn(3,spawn_x*20, 50,enemy)
+			enemy_container.spawn(3,spawn_x*20, 70,enemy)
 			waves[wave_index].append(enemy_container.instance)
 			for wave in waves:
 				for en in wave:
 					en.z_index +=1
-			cooldown = (spawner_countdown_length*0.25/en_amount) -1
+			cooldown = (spawner_countdown_length*0.75/en_amount) -1
 	
 	if spawner_countdown == 1:
 		wave_index +=1
