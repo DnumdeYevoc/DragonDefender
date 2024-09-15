@@ -60,6 +60,7 @@ position = Vector2(122, 708)
 scale = Vector2(2, 2)
 
 [node name="board" type="TextureRect" parent="."]
+z_index = 4096
 texture_filter = 1
 offset_left = 70.0
 offset_right = 550.0

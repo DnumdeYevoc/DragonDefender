@@ -38,7 +38,7 @@ func _physics_process(delta: float):
 		static_arrow.texture = arrow_texture
 		static_arrow.visible = true
 		if not frame == 5:
-			frame += 10 * delta
+			frame += 25 * delta
 		#wobble
 		if wobble < 3:
 			wobble += 0.5 * delta
@@ -93,11 +93,11 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		healthbar.update(0,health, max_health) 
 		body.speed = 0
 		if body.is_fire:
-			fire_damage = 5
+			fire_damage = 3
 			body.Fireball.visible = false
 			body.fire.visible = true
 			body.animation = body.fire
-			fire_life = 5
+			fire_life = 3
 			if fire_life < 0:
 				body.queue_free
 				body.Fireball.visible = true
