@@ -1,16 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://doaxs8klsm1ra"]
+[gd_scene load_steps=15 format=3 uid="uid://doaxs8klsm1ra"]
 
 [ext_resource type="PackedScene" uid="uid://byc1chnbe0qt7" path="res://bow.tscn" id="1_7xykp"]
 [ext_resource type="Script" path="res://game.gd" id="1_lf145"]
 [ext_resource type="Texture2D" uid="uid://cf6bx0nlodint" path="res://Bg.png" id="1_m1xqi"]
 [ext_resource type="Texture2D" uid="uid://ccxqc8v04sopd" path="res://Textures/Sky.png" id="2_8fq41"]
 [ext_resource type="Texture2D" uid="uid://c2ian1woxlqxx" path="res://Textures/castle.png" id="3_lx3vy"]
-[ext_resource type="Texture2D" uid="uid://c76tn8gemyuom" path="res://Textures/forest.png" id="4_4j4ta"]
+[ext_resource type="Texture2D" uid="uid://c76tn8gemyuom" path="res://Textures/Forest.png" id="4_4j4ta"]
 [ext_resource type="Texture2D" uid="uid://bmfaddgmkhxqt" path="res://Textures/Board.png" id="6_4p86g"]
 [ext_resource type="Texture2D" uid="uid://b5v5efgpo8txd" path="res://Animations/Fire/Fire-frame-0.png" id="6_by44q"]
 [ext_resource type="Script" path="res://enemy_container.gd" id="6_jr4yr"]
 [ext_resource type="Texture2D" uid="uid://doitaxtnn7tnv" path="res://Animations/Fire/Fire-frame-1.png" id="7_tf7ko"]
-[ext_resource type="Script" path="res://score.gd" id="11_uj4as"]
+[ext_resource type="FontFile" uid="uid://deibammesi7oa" path="res://Seagram tfb.ttf" id="11_5r32d"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ryw5t"]
 animations = [{
@@ -25,6 +25,14 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="LabelSettings" id="LabelSettings_udc2t"]
+font = ExtResource("11_5r32d")
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_7xq5y"]
+font = ExtResource("11_5r32d")
+font_size = 50
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_lf145")
@@ -68,6 +76,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("3_lx3vy")
 
 [node name="Fire" type="AnimatedSprite2D" parent="Castle"]
+visible = false
 texture_filter = 1
 position = Vector2(156.406, 279.625)
 scale = Vector2(30.6187, 10.8125)
@@ -95,13 +104,17 @@ texture = ExtResource("6_4p86g")
 
 [node name="Score" type="Label" parent="board"]
 layout_mode = 0
-offset_left = 53.0
-offset_top = 61.0
-offset_right = 93.0
-offset_bottom = 84.0
-script = ExtResource("11_uj4as")
+offset_left = 22.0
+offset_top = 42.0
+offset_right = 222.0
+offset_bottom = 99.0
+text = "SCORE: 0"
+label_settings = SubResource("LabelSettings_udc2t")
 
-[node name="Score2" type="Label" parent="board"]
+[node name="highscore" type="Label" parent="board"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 264.0
+offset_top = 47.0
+offset_right = 415.0
+offset_bottom = 82.0
+label_settings = SubResource("LabelSettings_7xq5y")

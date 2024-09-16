@@ -1,41 +1,48 @@
 extends Area2D
-
+var cooldown = 0
 @onready var projectile_emmiter = $EnemyProjectileEmmiter
-@onready var animation = $BD_animation
 @onready var hitbox = $CollisionShape2D
 @onready var healthbar = $healthbar
+@onready var animation = $BD_animation
+var random = RandomNumberGenerator.new()
 var game : Node2D
 var enemy_container :Node2D
-var random = RandomNumberGenerator.new()
-var fireball = preload('res://fireball.tscn')
-var health = 10
+var scale_up = 0
+
+
+var projectile = preload('res://fireball.tscn')
+var health : int
 var proj_speed = 10000
 var multishot = 1
-var cooldown = 0
 var max_health = 10
-var scale_up = 0
+var animation_speed = 100
+var reload_speed = 200
+
+var profile : Enemy
 func _ready():
+	profile = load("res://Resources/Dragon.tres")
+	animation.sprite_frames = profile.animation
+	projectile = profile.projectile
+	health = profile.health
+	multishot = profile.multishot
+	proj_speed = profile.proj_speed
+	max_health = profile.max_health
+	animation_speed = profile.animation_speed
+	reload_speed = profile.reload_speed
 	enemy_container = get_tree().get_root().get_node('Game').get_node('enemy_container')
 	game = get_tree().get_root().get_node('Game')
 	health = max_health
 	healthbar.update(0,health, max_health)
 func _physics_process(delta : float):
-	animation.play('default',100*delta)
+	animation.play('default',animation_speed*delta)
 	cooldown += 1
 	
 	scale = Vector2((position.y+scale_up) /300,(position.y + scale_up)/300)
 	
-	if Input.is_action_pressed('ui_up'):
-		position.y += -delta*60*(position.y /300)
-	if Input.is_action_pressed('ui_down') :
-		position.y += delta*60*(position.y /300)
-	
-	if cooldown >= random.randi_range(200,800):
-		projectile_emmiter.shoot(2,multishot,0,proj_speed,global_position, 10, fireball)
+	if cooldown >= random.randi_range(0.5*reload_speed,4*reload_speed):
+		projectile_emmiter.shoot(2,multishot,0,proj_speed,global_position, 10, projectile)
 		cooldown = 0
-		
-	#if game.spawner_cooldown>0:
-		#position.y +=1
+
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.collision_layer == 4:
@@ -45,6 +52,7 @@ func _on_body_entered(body: Node2D) -> void:
 		body.queue_free()
 		
 		if health == 0:
+			game.enemy_death(max_health)
 			enemy_container.enemy_list.erase(self)
 			for wave in game.waves:
 				wave.erase(self)

@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="Enemy" load_steps=11 format=3 uid="uid://cudmahbi1oatt"]
+
+[ext_resource type="Texture2D" uid="uid://h685qx4j5jyg" path="res://Animations/BD-frames/pixil-frame-0.png" id="1_1dkfc"]
+[ext_resource type="Texture2D" uid="uid://d4jyth1rwx67r" path="res://Animations/BD-frames/pixil-frame-1.png" id="2_dmmhy"]
+[ext_resource type="Texture2D" uid="uid://c633mp6m320m8" path="res://Animations/BD-frames/pixil-frame-2.png" id="3_edrav"]
+[ext_resource type="Texture2D" uid="uid://6guaw1qvnyjr" path="res://Animations/BD-frames/pixil-frame-3.png" id="4_sqopn"]
+[ext_resource type="Texture2D" uid="uid://d18gt26xdba3l" path="res://Animations/BD-frames/pixil-frame-4.png" id="5_oo5k6"]
+[ext_resource type="Texture2D" uid="uid://ierioqwnp4su" path="res://Animations/BD-frames/pixil-frame-5.png" id="6_560ry"]
+[ext_resource type="Texture2D" uid="uid://q26eytrqj21u" path="res://Animations/BD-frames/pixil-frame-6.png" id="7_jnm5v"]
+[ext_resource type="PackedScene" uid="uid://b5fl743a3lung" path="res://fireball.tscn" id="8_5e5uj"]
+[ext_resource type="Script" path="res://Resources/enemy_resource.gd" id="9_isbok"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q5fqd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1dkfc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dmmhy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_edrav")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sqopn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_oo5k6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_560ry")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jnm5v")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("9_isbok")
+animation = SubResource("SpriteFrames_q5fqd")
+health = 10
+proj_speed = 10000
+projectile = ExtResource("8_5e5uj")
+multishot = 1
+max_health = 10
+animation_speed = 100
+reload_speed = 200
