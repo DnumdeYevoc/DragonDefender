@@ -22,8 +22,9 @@ func spawn(collision_layer,spawn_x, spawn_y,projectile):
 	enemy_list.append(instance)
 	
 func move_up(rate):
-	for enemy in enemy_list:
-		enemy.position.y +=rate*(enemy.position.y/300)
+	if enemy_list.size()>0:
+		for enemy in enemy_list:
+			enemy.position.y +=rate*(enemy.position.y/300)
 func scale_up(rate):
 	for enemy in enemy_list:
 		enemy.scale_up +=rate*(enemy.position.y/300)

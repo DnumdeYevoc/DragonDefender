@@ -10,6 +10,8 @@ extends Node2D
 @onready var button = $Castle/death_menu/try_again
 @onready var play_button = $Castle/Main_menu/Play
 @onready var game_over_label = $Castle/death_menu/GameOver
+@onready var main_menu_music = $main_menu
+@onready var battle_music = $AudioStreamPlayer
 var random = RandomNumberGenerator.new()
 var spawn_x :int
 var cooldown = 0
@@ -27,12 +29,14 @@ var started = false
 @onready var highscore = load_data_from("user://highscore")
 
 func _ready():
-	score_label.text = str(score)
+	score_label.text =' Current :'+ str(score)
 	highscore_label.text = 'Best : '+ str(highscore)
 func _physics_process(delta: float) -> void:
 	if main_menu:
 		if not reset:
 			print('reseting')
+			main_menu_music.playing = true
+			battle_music.playing = false
 			score = 0
 			started = false
 			game_over_label.visible = false
@@ -124,6 +128,8 @@ func _on_play_pressed() -> void:
 	play_button.disabled = true
 func start_game():
 	if castle.position.y < 600 and not started:
+		main_menu_music.playing = false
+		battle_music.playing = true
 		bg.position.y -=0.4
 		bow.position.y +=2
 		castle.position.y +=2

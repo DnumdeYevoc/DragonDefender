@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://doaxs8klsm1ra"]
+[gd_scene load_steps=18 format=3 uid="uid://doaxs8klsm1ra"]
 
 [ext_resource type="PackedScene" uid="uid://byc1chnbe0qt7" path="res://bow.tscn" id="1_7xykp"]
 [ext_resource type="Script" path="res://game.gd" id="1_lf145"]
@@ -13,6 +13,8 @@
 [ext_resource type="Script" path="res://try_again.gd" id="8_3kyoi"]
 [ext_resource type="FontFile" uid="uid://deibammesi7oa" path="res://Seagram tfb.ttf" id="11_5r32d"]
 [ext_resource type="LabelSettings" uid="uid://bkd0tpkn15r8r" path="res://font.tres" id="11_23txg"]
+[ext_resource type="AudioStream" uid="uid://dtfav5wnt4ak6" path="res://fantasy-pagan-medieval-cinematic-epic-war-battle-119770.mp3" id="14_rj6cc"]
+[ext_resource type="AudioStream" uid="uid://dt4u7287vg6xn" path="res://a-goofy-and-silly-medieval-song-161310.mp3" id="15_0iuab"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fr8wj"]
 font = ExtResource("11_5r32d")
@@ -161,6 +163,13 @@ offset_right = 496.0
 offset_bottom = 140.0
 text = "Best:"
 label_settings = ExtResource("11_23txg")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_rj6cc")
+
+[node name="main_menu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_0iuab")
+autoplay = true
 
 [connection signal="pressed" from="Castle/death_menu/try_again" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Castle/Main_menu/Play" to="." method="_on_play_pressed"]
