@@ -2,15 +2,13 @@ extends CharacterBody2D
 
 @export var damage : int
 @onready var frames = $Sprite2D
+@onready var game : Node2D
 var counter = 0
 var texture : Texture2D
 
 var speed : int
 
-
-func ready():
-	frames.texture = texture
-	counter = 0
+	
 func _physics_process(delta):
 	counter += 1
 	velocity = Vector2(speed * delta,0).rotated(rotation)
@@ -27,7 +25,7 @@ func _physics_process(delta):
 		#rotation_degrees += 30*delta
 	move_and_slide()
 
-
+	
 
 func _on_timer_timeout():
 	queue_free()

@@ -42,7 +42,8 @@ func _physics_process(delta : float):
 	if cooldown >= random.randi_range(0.5*reload_speed,4*reload_speed):
 		projectile_emmiter.shoot(2,multishot,0,proj_speed,global_position, 10, projectile)
 		cooldown = 0
-
+	if position.y >= 1100:
+		queue_free()
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.collision_layer == 4:

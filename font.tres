@@ -1,0 +1,11 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bkd0tpkn15r8r"]
+
+[ext_resource type="FontFile" uid="uid://deibammesi7oa" path="res://Seagram tfb.ttf" id="1_tfih1"]
+
+[resource]
+line_spacing = 1.0
+font = ExtResource("1_tfih1")
+font_size = 30
+font_color = Color(0.952941, 0.960784, 0.0901961, 1)
+outline_size = 15
+outline_color = Color(0.386768, 0.383034, 0.00128345, 1)
