@@ -17,15 +17,18 @@ var multishot = 1
 var max_health = 10
 var animation_speed = 100
 var reload_speed = 200
+var proj_damage = 10
+var proj_profile
 
 var profile : Enemy
 func _ready():
 	
 	animation.sprite_frames = profile.animation
-	projectile = profile.projectile
+	proj_profile = profile.proj_profile
 	health = profile.health
 	multishot = profile.multishot
 	proj_speed = profile.proj_speed
+	proj_damage = profile.proj_damage
 	max_health = profile.max_health
 	animation_speed = profile.animation_speed
 	reload_speed = profile.reload_speed
@@ -40,7 +43,7 @@ func _physics_process(delta : float):
 	scale = Vector2((position.y+scale_up) /300,(position.y + scale_up)/300)
 	
 	if cooldown >= random.randi_range(0.5*reload_speed,4*reload_speed):
-		projectile_emmiter.shoot(2,multishot,0,proj_speed,global_position, 10, projectile)
+		projectile_emmiter.shoot(2,multishot,0,proj_speed,global_position, proj_damage, projectile, proj_profile)
 		cooldown = 0
 	if position.y >= 1100:
 		queue_free()

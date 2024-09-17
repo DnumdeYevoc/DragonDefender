@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var game : Node2D
 var counter = 0
 var texture : Texture2D
-
+var proj_profile : Resource
 var speed : int
 
 	

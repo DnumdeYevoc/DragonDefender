@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="Enemy" load_steps=5 format=3 uid="uid://b3malkm1uuphg"]
+
+[ext_resource type="Texture2D" uid="uid://b8tedtm0tuvnx" path="res://Animations/Fireball/Fireball-frame-0.png" id="1_1sd7n"]
+[ext_resource type="Texture2D" uid="uid://bjfakmft2ousy" path="res://Animations/Fireball/Fireball-frame-1.png" id="2_swwqj"]
+[ext_resource type="Script" path="res://Resources/Proj_resource.gd" id="3_e1j36"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cmr17"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1sd7n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_swwqj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("3_e1j36")
+animation = SubResource("SpriteFrames_cmr17")
+is_fire = true
+size = 50
+damage = 5

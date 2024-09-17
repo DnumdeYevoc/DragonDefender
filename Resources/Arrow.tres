@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Proj" load_steps=4 format=3 uid="uid://c0eltsmg42u53"]
+
+[ext_resource type="Texture2D" uid="uid://dte3y4m0d6fw5" path="res://Textures/arrow.png" id="1_j2734"]
+[ext_resource type="Script" path="res://Resources/Proj_resource.gd" id="3_nfert"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e4j7e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_j2734")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("3_nfert")
+animation = SubResource("SpriteFrames_e4j7e")
+is_fire = false
+size = 50
+is_ice = false

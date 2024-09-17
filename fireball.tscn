@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://b5fl743a3lung"]
 
-[ext_resource type="Script" path="res://fireball.gd" id="1_p0pvm"]
+[ext_resource type="Script" path="res://Projectile.gd" id="1_lxish"]
 [ext_resource type="Texture2D" uid="uid://b8tedtm0tuvnx" path="res://Animations/Fireball/Fireball-frame-0.png" id="4_esup6"]
 [ext_resource type="Texture2D" uid="uid://b5v5efgpo8txd" path="res://Animations/Fire/Fire-frame-0.png" id="4_u2ai5"]
 [ext_resource type="Texture2D" uid="uid://bjfakmft2ousy" path="res://Animations/Fireball/Fireball-frame-1.png" id="5_e64cc"]
@@ -39,9 +39,9 @@ radius = 5.0
 height = 16.0
 
 [node name="Fireball" type="CharacterBody2D"]
-script = ExtResource("1_p0pvm")
+script = ExtResource("1_lxish")
 
-[node name="Fireball" type="AnimatedSprite2D" parent="."]
+[node name="animation" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(0, -2)
 sprite_frames = SubResource("SpriteFrames_3s8ji")

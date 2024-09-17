@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var bow = $Sprite2D
 @onready var healthbar = $healthbar
 @onready var game : Node2D
-
+var arrow_prof = load('res://Resources/Arrow.tres')
 var cooldown = 0
 var bg : Node2D
 var speed = 200
@@ -69,7 +69,7 @@ func _physics_process(delta: float):
 		
 		if frame >3  and frame<7:
 			angle += 270
-			projectile_emmiter.shoot(4,1,angle,300*frame**3,global_position,5,arrow)
+			projectile_emmiter.shoot(4,1,angle,300*frame**3,global_position,5,arrow, arrow_prof)
 		angle = 0
 		wobble = 0
 	

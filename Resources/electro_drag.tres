@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cbfd38idjapw0" path="res://Animations/electro_drag/pixil-frame-0.png" id="1_8b42y"]
 [ext_resource type="Texture2D" uid="uid://dhuuwktov1ktj" path="res://Animations/electro_drag/pixil-frame-1.png" id="2_f1u6j"]
-[ext_resource type="PackedScene" uid="uid://b5fl743a3lung" path="res://fireball.tscn" id="8_rnghw"]
+[ext_resource type="Resource" uid="uid://b3malkm1uuphg" path="res://Resources/Fireball.tres" id="3_k8jfv"]
 [ext_resource type="Script" path="res://Resources/enemy_resource.gd" id="9_da58x"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pua1p"]
@@ -16,16 +16,17 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 8.0
+"speed": 5.0
 }]
 
 [resource]
 script = ExtResource("9_da58x")
 animation = SubResource("SpriteFrames_pua1p")
-health = 25
+health = 45
 proj_speed = 25000
-projectile = ExtResource("8_rnghw")
 multishot = 1
-max_health = 25
+max_health = 45
 animation_speed = 100
-reload_speed = 500
+proj_damage = 10
+reload_speed = 1000
+proj_profile = ExtResource("3_k8jfv")
