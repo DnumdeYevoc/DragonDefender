@@ -23,6 +23,7 @@ var score = 0
 var main_menu = true
 var reset = false
 var started = false
+
 @onready var highscore = load_data_from("user://highscore")
 
 func _ready():
@@ -67,6 +68,7 @@ func _physics_process(delta: float) -> void:
 			if cooldown <=0 and spawner_countdown >= spawner_countdown_length*0.25:
 				spawn_x = random.randi_range(1,14)
 				en_index +=1
+				
 				enemy_container.spawn(3,spawn_x*20, 70,enemy)
 				waves[wave_index].append(enemy_container.instance)
 				for wave in waves:

@@ -20,7 +20,7 @@ var reload_speed = 200
 
 var profile : Enemy
 func _ready():
-	profile = load("res://Resources/Dragon.tres")
+	
 	animation.sprite_frames = profile.animation
 	projectile = profile.projectile
 	health = profile.health

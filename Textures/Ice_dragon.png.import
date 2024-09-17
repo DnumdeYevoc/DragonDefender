@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c76tn8gemyuom"
-path="res://.godot/imported/Forest.png-6be97cb3f227c2baa0071ad233675dba.ctex"
+uid="uid://dleh21rma5ok2"
+path="res://.godot/imported/Ice_dragon.png-6a93afe3ee17730e2f5c1fae4a4dc2e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Forest.png"
-dest_files=["res://.godot/imported/Forest.png-6be97cb3f227c2baa0071ad233675dba.ctex"]
+source_file="res://Textures/Ice_dragon.png"
+dest_files=["res://.godot/imported/Ice_dragon.png-6a93afe3ee17730e2f5c1fae4a4dc2e2.ctex"]
 
 [params]
 
