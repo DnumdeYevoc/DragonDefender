@@ -57,7 +57,7 @@ func _physics_process(delta: float) -> void:
 		start_game()
 	else:
 		
-		enemy_container.move_up(0.1)
+		enemy_container.move_up(2)
 		if len(waves[wave_index-1])==0 and spawner_countdown<0:
 			spawner_countdown =  spawner_countdown_length
 			en_amount = wave_index + 2
