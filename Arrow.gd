@@ -6,7 +6,7 @@ extends CharacterBody2D
 var counter = 0
 var texture : Texture2D
 var proj_profile : Resource
-var speed : int
+var speed :float
 
 	
 func _physics_process(delta):

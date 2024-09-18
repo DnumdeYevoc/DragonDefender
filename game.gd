@@ -12,6 +12,7 @@ extends Node2D
 @onready var game_over_label = $Castle/death_menu/GameOver
 @onready var main_menu_music = $main_menu
 @onready var battle_music = $AudioStreamPlayer
+@onready var wave_label = $board/wave_label
 var random = RandomNumberGenerator.new()
 var spawn_x :int
 var cooldown = 0
@@ -31,10 +32,14 @@ var started = false
 func _ready():
 	score_label.text =' Current :'+ str(score)
 	highscore_label.text = 'Best : '+ str(highscore)
-func _physics_process(delta: float) -> void:
+	wave_label.text = ''
+func _physics_process(_delta: float) -> void:
 	if main_menu:
 		if not reset:
+			spawner_countdown =  spawner_countdown_length
+			wave_index = 0
 			score = 0
+			waves = [[]]
 			score_label.text = 'Current : '  + str(score)
 			main_menu_music.playing = true
 			battle_music.playing = false
@@ -48,6 +53,7 @@ func _physics_process(delta: float) -> void:
 			bg.position.y = 94
 			bow.position.y = 357
 			bow.health = bow.max_health
+			bow.healthbar.update(0,bow.health, bow.max_health)
 			for en in enemy_container.enemy_list:
 				en.queue_free()
 			enemy_container.enemy_list.clear()
@@ -57,13 +63,15 @@ func _physics_process(delta: float) -> void:
 		start_game()
 	else:
 		
-		enemy_container.move_up(2)
+		enemy_container.move_up(0.02*wave_index)
 		if len(waves[wave_index-1])==0 and spawner_countdown<0:
 			spawner_countdown =  spawner_countdown_length
 			en_amount = wave_index + 2
 			
 		if spawner_countdown == spawner_countdown_length:
 			cooldown = (spawner_countdown_length*0.25/en_amount) -1
+			if wave_index > 1:
+				wave_label.text = 'x'+str(wave_index)
 		if spawner_countdown>= 0:
 			spawner_countdown -=1
 			cooldown-=1
@@ -85,8 +93,9 @@ func _physics_process(delta: float) -> void:
 			waves.append([])
 		
 func enemy_death(points):
-	score += points
+	score += points*wave_index
 	score_label.text = 'Current : '  + str(score)
+	
 	if score > highscore: 
 		
 		score_label.text = ' New Best'
@@ -94,7 +103,7 @@ func enemy_death(points):
 		highscore_label.text = 'Best : '+ str(highscore)
 		save_data_to("user://highscore", highscore)
 func game_over():
-	
+	reset = false
 	if castle.position.y > 250:
 		bg.position.y +=0.4
 		bow.position.y -=1.5
@@ -104,7 +113,7 @@ func game_over():
 		
 		button.disabled = false
 		button.visible = true
-		reset = false
+		
 	else:
 		enemy_container.move_up(1)
 		

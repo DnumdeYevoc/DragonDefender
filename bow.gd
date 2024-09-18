@@ -90,7 +90,9 @@ func _physics_process(delta: float):
 	#freezing
 	if freeze_life>0:
 		freeze_life -=1
+		
 	else:
+		
 		speed = 200
 	#burning
 	if fire_life>0:
@@ -113,12 +115,13 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			body.animation = body.fire
 			fire_life = 3
 			if fire_life < 0:
-				body.queue_free
+				body.queue_free()
 				body.Fireball.visible = true
 				body.fire.visible = false
 				fire_life = 0
 		if body.is_ice:
-			freeze_life = 500
+			body.queue_free()
+			freeze_life = 400
 			speed /= 2
 			
 			

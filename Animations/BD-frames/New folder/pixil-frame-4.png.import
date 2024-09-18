@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c76tn8gemyuom"
-path="res://.godot/imported/Forest.png-6be97cb3f227c2baa0071ad233675dba.ctex"
+uid="uid://c0otjjyp7wp7g"
+path="res://.godot/imported/pixil-frame-4.png-d5b363e4d4e649c71086424670821e94.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Forest.png"
-dest_files=["res://.godot/imported/Forest.png-6be97cb3f227c2baa0071ad233675dba.ctex"]
+source_file="res://Animations/BD-frames/New folder/pixil-frame-4.png"
+dest_files=["res://.godot/imported/pixil-frame-4.png-d5b363e4d4e649c71086424670821e94.ctex"]
 
 [params]
 

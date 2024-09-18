@@ -14,9 +14,9 @@ func spawn(collision_layer,spawn_x, spawn_y,projectile):
 	type = random.randi_range(1,game.wave_index+5)
 	if type<6:
 		instance.profile = load('res://Resources/Dragon.tres')
-	elif type<8 and type >=6:
+	elif type in range(6,9):
 		instance.profile = load('res://Resources/Ice_drag.tres')
-	elif type >= 8:
+	elif type >= 10:
 		instance.profile = load('res://Resources/electro_drag.tres')
 		
 
