@@ -24,7 +24,8 @@ func _physics_process(delta):
 	#if rotation_degrees < 90:
 		#rotation_degrees += 30*delta
 	move_and_slide()
-
+	if speed == 0:
+		queue_free()
 	
 
 func _on_timer_timeout():

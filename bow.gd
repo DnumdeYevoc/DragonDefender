@@ -14,6 +14,7 @@ var angle = 0
 var wobble = 0
 var toggle = true
 var count = 0
+var freeze_life = 0
 var fireball = preload("res://fireball.tscn")
 @onready var arrow_texture = preload("res://arrow.png")
 var arrow = preload('res://Arrow.tscn')
@@ -86,7 +87,11 @@ func _physics_process(delta: float):
 		
 
 	move_and_slide()
-	
+	#freezing
+	if freeze_life>0:
+		freeze_life -=1
+	else:
+		speed = 200
 	#burning
 	if fire_life>0:
 		burn_timer +=1
@@ -112,6 +117,10 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 				body.Fireball.visible = true
 				body.fire.visible = false
 				fire_life = 0
+		if body.is_ice:
+			freeze_life = 500
+			speed /= 2
+			
 			
 		
 		

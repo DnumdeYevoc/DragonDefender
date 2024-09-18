@@ -6,6 +6,7 @@ var speed :int
 @onready var Fireball = $animation
 @onready var fire= $Fire
 var is_fire = true
+var is_ice : bool
 var size = 50
 var game : Node2D
 var proj_profile : Proj
@@ -15,7 +16,7 @@ func _ready():
 	animation.sprite_frames = proj_profile.animation
 	size = proj_profile.size
 	is_fire = proj_profile.is_fire 
-	
+	is_ice = proj_profile.is_ice
 	
 	
 	game = get_tree().get_root().get_node('Game')

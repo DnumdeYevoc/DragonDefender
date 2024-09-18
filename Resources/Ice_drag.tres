@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Enemy" load_steps=5 format=3 uid="uid://dtrfyanqkc514"]
 
 [ext_resource type="Texture2D" uid="uid://dleh21rma5ok2" path="res://Textures/Ice_dragon.png" id="1_8p468"]
-[ext_resource type="Resource" uid="uid://b6jx86u7ss4ea" path="res://Resources/Icicle.tres" id="2_aw5ll"]
+[ext_resource type="Resource" uid="uid://b6jx86u7ss4ea" path="res://Resources/Snowball.tres" id="2_oy3nt"]
 [ext_resource type="Script" path="res://Resources/enemy_resource.gd" id="4_ajymc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pdjqq"]
@@ -23,6 +23,6 @@ proj_speed = 25000
 multishot = 1
 max_health = 25
 animation_speed = 100
-proj_damage = 0
+proj_damage = 5
 reload_speed = 500
-proj_profile = ExtResource("2_aw5ll")
+proj_profile = ExtResource("2_oy3nt")

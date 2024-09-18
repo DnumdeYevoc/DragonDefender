@@ -45,6 +45,8 @@ func _physics_process(delta : float):
 	if cooldown >= random.randi_range(0.5*reload_speed,4*reload_speed):
 		projectile_emmiter.shoot(2,multishot,0,proj_speed,global_position, proj_damage, projectile, proj_profile)
 		cooldown = 0
+	if position.y >= 800:
+		game.game_over()
 	if position.y >= 1100:
 		queue_free()
 

@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Proj" load_steps=4 format=3 uid="uid://b6jx86u7ss4ea"]
+
+[ext_resource type="Texture2D" uid="uid://cituiow8wum7r" path="res://Textures/Snowball.png" id="1_q0sne"]
+[ext_resource type="Script" path="res://Resources/Proj_resource.gd" id="2_40vcq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vt4k6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_q0sne")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("2_40vcq")
+animation = SubResource("SpriteFrames_vt4k6")
+is_fire = false
+size = 25
+is_ice = true

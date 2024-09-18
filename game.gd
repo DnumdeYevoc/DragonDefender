@@ -34,10 +34,10 @@ func _ready():
 func _physics_process(delta: float) -> void:
 	if main_menu:
 		if not reset:
-			print('reseting')
+			score = 0
+			score_label.text = 'Current : '  + str(score)
 			main_menu_music.playing = true
 			battle_music.playing = false
-			score = 0
 			started = false
 			game_over_label.visible = false
 			play_button.visible = true
